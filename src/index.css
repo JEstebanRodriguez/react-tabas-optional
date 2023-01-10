@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  width: 50rem;
+  margin: 4rem auto;
+}
+
+.tab-list {
+  display: flex;
+  list-style-type: none;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tab-list__link {
+  padding: .5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: .4rem;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  transition: all .8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.tab-list__link.active {
+  color: #fff;
+  background-color: #000;
+}
+
+.tab-body {
+  display: none;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: .4rem;
+  min-height: 15vh;
+}
+
+.tab-body.active {
+  display: block;
+}
+
+.tab-body > * {
+  animation: appear 10s ease-in;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
